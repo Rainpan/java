@@ -9,6 +9,8 @@ sudo apt install git zsh vim htop curl wget ca-certificates curl gnupg lsb-relea
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+sed -i "73s/git/git zsh-syntax-highlighting zsh-autosuggestions/g" ~/.zshrc
+source ~/.zshrc
 
 #docker
 sudo mkdir -p /etc/apt/keyrings
